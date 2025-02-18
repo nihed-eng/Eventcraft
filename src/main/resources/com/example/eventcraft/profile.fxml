@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Text?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="1127.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="tn.esprit.controllers.HelloProfile">
+    <left>
+        <VBox>
+            <children>
+                <VBox prefHeight="200.0" prefWidth="200.0">
+                    <children>
+                        <BorderPane prefHeight="229.0" prefWidth="449.0">
+                            <top>
+                                <VBox prefHeight="368.0" prefWidth="122.0" spacing="10" style="-fx-background-color: #FFFFFF; -fx-padding: 20;" BorderPane.alignment="CENTER">
+                                    <children>
+                                        <ImageView fx:id="imageView" fitHeight="80.0" fitWidth="80.0">
+                                            <image>
+                                                <Image url="@../../../images/logo1.png" />
+                                            </image>
+                                        </ImageView>
+                                        <Button style="-fx-background-color: transparent; -fx-border-color: transparent transparent #000000 transparent; -fx-border-width: 0 0 2px 0;" text="Evenements" />
+                                        <Button onAction="#handleAfficherSallesClick" style="-fx-background-color: transparent; -fx-border-color: transparent transparent #000000 transparent; -fx-border-width: 0 0 2px 0;" text="Afficher les Salles" />
+                                        <Button style="-fx-background-color: transparent; -fx-border-color: transparent transparent #000000 transparent; -fx-border-width: 0 0 2px 0;" text="Favoris" />
+
+                                    </children>
+                                </VBox>
+                            </top>
+                        </BorderPane>
+                    </children>
+                </VBox>
+            </children>
+        </VBox>
+    </left>
+    <center>
+        <HBox prefHeight="100.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+            <children>
+                <HBox prefHeight="400.0" prefWidth="1048.0">
+                    <children>
+                        <VBox prefHeight="515.0" prefWidth="1040.0">
+                            <children>
+                                <HBox alignment="CENTER_RIGHT" prefHeight="124.0" prefWidth="927.0" spacing="10" style="-fx-background-color: #98A695;">
+                                    <children>
+                                        <!-- Espace vide pour pousser les éléments vers la droite -->
+                                        <Region HBox.hgrow="ALWAYS" />
+
+                                        <!-- Bouton avec icône de recherche -->
+                                        <Button style="-fx-border-color: #FFFFFF;">
+                                            <graphic>
+                                                <ImageView fitHeight="24" fitWidth="24" preserveRatio="true">
+                                                    <image>
+                                                        <Image url="@../../../images/search-icon.svg" />
+                                                    </image>
+                                                </ImageView>
+                                            </graphic>
+                                        </Button>
+
+                                        <!-- Bouton avec icône de user -->
+                                        <Button style="-fx-border-color: #FFFFFF;">
+                                            <graphic>
+                                                <ImageView fitHeight="24" fitWidth="24" preserveRatio="true">
+                                                    <image>
+                                                        <Image url="@../../../images/user-icon.svg" />
+                                                    </image>
+                                                </ImageView>
+                                            </graphic>
+                                        </Button>
+
+                                        <!-- Bouton avec icône de déconnexion -->
+                                        <Button style="-fx-border-color: #FFFFFF;">
+                                            <graphic>
+                                                <ImageView fitHeight="24" fitWidth="24" preserveRatio="true">
+                                                    <image>
+                                                        <Image url="@../../../images/logout-icon.svg" />
+                                                    </image>
+                                                </ImageView>
+                                            </graphic>
+                                        </Button>
+
+                                    </children>
+                                </HBox>
+
+                                <VBox prefHeight="200.0" prefWidth="100.0">
+                                    <children>
+                                        <HBox prefHeight="100.0" prefWidth="200.0">
+                                            <children>
+                                                <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Salles Disponibles" />
+                                                <Text layoutX="10.0" layoutY="23.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Gerer Mes Salles" />
+                                                <Button onAction="#handleAjouterSalleClick" style="-fx-background-color: #8D598F; -fx-text-fill: #FFFFFF;" text="Ajouter Salle" />
+                                            </children>
+                                        </HBox>
+                                        <VBox prefHeight="300.0" prefWidth="1043.0" spacing="10" style="-fx-padding: 20;">
+                                            <children>
+
+                                               <HBox prefHeight="100.0" prefWidth="200.0" />
+                                                <HBox prefHeight="74.0" prefWidth="887.0" spacing="20" style="-fx-padding: 10;">
+                                                    <children>
+                                                        <!-- ListView pour afficher les salles -->
+                                                        <ListView fx:id="listViewSalles" prefHeight="300.0" prefWidth="1040.0" style="-fx-padding: 10;">
+                                                            <items>
+                                                                <!-- Liste des éléments dynamiquement ajoutée -->
+                                                            </items>
+                                                        </ListView>
+                                                    </children>
+                                                </HBox>
+                                            </children>
+                                        </VBox>
+                                    </children>
+                                </VBox>
+
+                                <!-- Formulaire pour ajouter une salle -->
+                                <VBox fx:id="formulaireVBox" prefHeight="200.0" prefWidth="100.0" visible="false">
+                                    <children>
+                                        <TextField fx:id="titreField" promptText="Titre" />
+                                        <TextField fx:id="capaciteField" promptText="Capacité" />
+                                        <TextArea fx:id="equipementsField" promptText="Équipements" />
+                                        <TextField fx:id="localisationField" promptText="Localisation" />
+                                        <CheckBox fx:id="disponibiliteCheckBox" text="Disponible" />
+                                        <TextField fx:id="imageField" promptText="Image" />
+                                        <Button onAction="#handleBrowseAction" text="Parcourir" />
+                                        <Button onAction="#handleAjouterOuEditerSalle" text="Ajouter" />
+                                    </children>
+                                </VBox>
+                            </children>
+                        </VBox>
+                    </children>
+                </HBox>
+            </children>
+        </HBox>
+    </center>
+</BorderPane>
