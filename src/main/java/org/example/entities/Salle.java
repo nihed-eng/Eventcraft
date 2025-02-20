@@ -1,4 +1,5 @@
-package tn.esprit.entities;
+package org.example.entities;
+
 
 public class Salle {
     private int idSalle;
@@ -8,9 +9,10 @@ public class Salle {
     private boolean disponibilite;
     private String imageSalle;
     private String locationSalle;
+    private int userId; // Ajout du champ user_id
 
     // Constructeur avec paramètres
-    public Salle(int idSalle, String nomSalle, int capacite, String equipement, boolean disponibilite, String imageSalle, String locationSalle) {
+    public Salle(int idSalle, String nomSalle, int capacite, String equipement, boolean disponibilite, String imageSalle, String locationSalle, int userId) {
         this.idSalle = idSalle;
         this.nomSalle = nomSalle;
         this.capacite = capacite;
@@ -18,16 +20,18 @@ public class Salle {
         this.disponibilite = disponibilite;
         this.imageSalle = imageSalle;
         this.locationSalle = locationSalle;
+        this.userId = userId; // Initialisation de userId
     }
 
     // Constructeur sans ID (pour l'ajout)
-    public Salle(String nomSalle, int capacite, String equipement, boolean disponibilite, String imageSalle, String locationSalle) {
+    public Salle(String nomSalle, int capacite, String equipement, boolean disponibilite, String imageSalle, String locationSalle, int userId) {
         this.nomSalle = nomSalle;
         this.capacite = capacite;
         this.equipement = equipement;
         this.disponibilite = disponibilite;
         this.imageSalle = imageSalle;
         this.locationSalle = locationSalle;
+        this.userId = userId; // Initialisation de userId
     }
 
     // Getters
@@ -59,6 +63,10 @@ public class Salle {
         return locationSalle;
     }
 
+    public int getUserId() {
+        return userId;
+    }
+
     // Setters
     public void setIdSalle(int idSalle) {
         this.idSalle = idSalle;
@@ -88,6 +96,10 @@ public class Salle {
         this.locationSalle = locationSalle;
     }
 
+    public void setUserId(int userId) {
+        this.userId = userId;
+    }
+
     // Méthode toString
     @Override
     public String toString() {
@@ -99,6 +111,7 @@ public class Salle {
                 ", disponibilite=" + disponibilite +
                 ", imageSalle='" + imageSalle + '\'' +
                 ", locationSalle='" + locationSalle + '\'' +
+                ", userId=" + userId + // Affichage de userId
                 '}';
     }
 }

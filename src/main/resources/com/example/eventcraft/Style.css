@@ -1,129 +1,134 @@
-/* Global Style */
+/* General Styles */
 .root {
-    -fx-font-family: "Arial";
-    -fx-base: #f3f3f3;
+    -fx-font-family: "Arial", sans-serif;
+    -fx-base: #f4f4f4;
 }
 
-/* Anchor Pane Background */
-AnchorPane {
-    -fx-background-color: #f4f4f4;
+/* BorderPane Styles */
+.border-pane {
+    -fx-background-color: #ffffff;
+    -fx-fill-height: true;
 }
 
-/* HBox for Navigation Bar */
-/* Style for the Navigation Bar (HBox) */
-.hbox {
-    -fx-background-color: #CBA979;  /* Background color for the navigation bar */
-    -fx-padding: 10px;
-    -fx-spacing: 30px; /* Space between the labels */
-    -fx-alignment: center;
-}
-
-/* Style for the Labels inside the HBox */
-.hbox Label {
-    -fx-text-fill: white;  /* Text color */
-    -fx-font-size: 16px;  /* Font size */
-    -fx-font-weight: bold;  /* Bold font */
-    -fx-cursor: hand;  /* Pointer cursor on hover */
-    -fx-padding: 5px 10px;  /* Padding around the text */
-    -fx-transition: opacity 0.5s ease-in-out; /* Smooth transition on hover */
-}
-
-/* Hover effect for the Labels */
-.hbox Label:hover {
-    -fx-opacity: 0.8;  /* Slightly fade out when hovering */
-    -fx-scale-x: 1.1; /* Scale up the label on hover (horizontal scale) */
-    -fx-scale-y: 1.1; /* Scale up the label on hover (vertical scale) */
-}
-
-/* Active label (you can use this class for the active page) */
-.hbox .active {
-    -fx-text-fill: #ffcc00; /* Active page label color */
-    -fx-font-size: 18px; /* Slightly larger font for the active page */
-    -fx-font-weight: bold;
-}
-
-
-
-/* Image View */
-.image-view {
-    -fx-opacity: 0.8;
-    -fx-transition: opacity 1s ease-in-out;
-}
-
-/* Image hover effect */
-.image-view:hover {
-    -fx-opacity: 1.0;
-}
-
-/* Main VBox */
+/* VBox Styles */
 .vbox {
-    -fx-background-color: rgba(0, 0, 0, 0.37);
+    -fx-spacing: 10;
     -fx-padding: 20;
-    -fx-spacing: 20;
-    -fx-alignment: center;
-    -fx-transition: opacity 1s ease-in-out;
+}
+.vbox, .hbox {
+    -fx-fill-height: true;
 }
 
-/* Title Label in VBox */
-.vbox Label {
+/* Button Styles */
+.button {
+    -fx-background-color: transparent;
+    -fx-border-color: transparent transparent #000000 transparent;
+    -fx-border-width: 0 0 2px 0;
+    -fx-padding: 10;
+    transition-duration: 0.4s;
+    color: white;
+}
+
+.button:hover {
+    -fx-background-color: #8D598F;
     -fx-text-fill: white;
-    -fx-font-size: 20px;
-    -fx-font-weight: bold;
+    background-color: #FFFFFF;
+    color: white;
+    width: 100%;
+}
+
+/* Button with specific style */
+.button-add-salle {
+    -fx-background-color: #8D598F;
+    -fx-text-fill: #FFFFFF;
+    -fx-padding: 10;
+    width: 100%;
+}
+
+/* ImageView Styles */
+.image-view {
+    -fx-fit-height: 80.0;
+    -fx-fit-width: 80.0;
+}
+
+/* HBox Styles */
+.hbox {
+    -fx-spacing: 10;
+    -fx-padding: 10;
+    width: 100%;
+}
+
+/* Header Styles (for HBox) */
+.header-hbox {
+    -fx-background-color: #98A695;
     -fx-padding: 10;
 }
 
-/* TextField and TextArea */
-.text-field, .text-area {
-    -fx-background-color: #ffffff;
-    -fx-border-color: #CBA979;
-    -fx-padding: 10px;
-    -fx-border-radius: 5px;
-    -fx-font-size: 14px;
-    -fx-transition: background-color 0.3s ease;
+/* VBox for form fields */
+.form-vbox {
+    -fx-padding: 20;
+    -fx-background-color: #FFFFFF;
+    -fx-border-color: #ddd;
+    -fx-border-width: 1;
+    -fx-border-radius: 5;
 }
 
-/* Focus effect on TextFields */
-.text-field:focused, .text-area:focused {
-    -fx-background-color: #dcdcdc;
+/* TextField Styles */
+.text-field {
+    -fx-padding: 10;
+    -fx-border-color: #ddd;
+    -fx-border-width: 1;
+    -fx-border-radius: 3;
 }
 
-/* Buttons */
-.button {
-    -fx-background-color: #CBA979;
-    -fx-text-fill: white;
-    -fx-border-radius: 5px;
-    -fx-padding: 10px 20px;
-    -fx-font-size: 14px;
-    -fx-transition: background-color 0.3s ease, transform 0.3s ease;
-}
-
-/* Button hover effect */
-.button:hover {
-    -fx-background-color: #a88c55;
-    -fx-scale-x: 1.1;  /* Scale horizontally */
-    -fx-scale-y: 1.1;  /* Scale vertically */
-}
-
-
-/* CheckBox style */
+/* CheckBox Styles */
 .check-box {
+    -fx-padding: 10;
+}
+
+/* ListView Styles */
+.list-view {
+    -fx-text-align: center;
+    -fx-background-color: transparent;
+    -fx-padding: 10;
+    -fx-border-color: #ddd;
+    -fx-border-width: 1;
+    -fx-border-radius: 5;
+    -fx-background-color: #FFFFFF;
+    -fx-max-height: Infinity;
+    -fx-min-height: 0;
+}
+
+.content {
+    -fx-padding: 16px;
+    -fx-text-align: center;
+    -fx-background-color: #f1f1f1;
+}
+
+/* Specific Styles for VBox */
+.form-vbox {
+    -fx-spacing: 10;
+    -fx-background-color: transparent;
+}
+
+/* Button for adding salles */
+.button-add {
+    -fx-background-color: #8D598F;
     -fx-text-fill: white;
+    -fx-padding: 10;
 }
 
-.check-box .box {
-    -fx-background-color: #CBA979;
+/* Region for spacing */
+.region {
+    -fx-hgrow: always;
 }
 
-.check-box:hover {
-    -fx-opacity: 0.7;
+.card {
+    content: "";
+    clear: both;
+    display: table;
 }
 
-/* Add transition on VBox */
-.vbox {
-    -fx-opacity: 0;
-    -fx-transition: opacity 2s ease-in-out;
-}
-
-.vbox.fade-in {
-    -fx-opacity: 1;
+.container {
+    padding: 2px 16px;
 }

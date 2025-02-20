@@ -1,4 +1,5 @@
-package tn.esprit.controllers;
+package org.example.controller;
+
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;

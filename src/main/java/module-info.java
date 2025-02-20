@@ -8,7 +8,8 @@ module tn.esprit {
     requires java.desktop;
 
     opens com.example.eventcraft to javafx.graphics;
-    opens tn.esprit.controllers to javafx.fxml;
-    exports tn.esprit.test;
-    exports tn.esprit.controllers;
+    opens org.example.controller to javafx.fxml;
+            exports org.example.controller;
+
+
 }

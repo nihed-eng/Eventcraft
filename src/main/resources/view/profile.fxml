@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.VBox?>
+
+<BorderPane xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.controller.HelloProfile">
+    <!-- Header Navigation -->
+    <top>
+        <HBox spacing="20" alignment="CENTER_RIGHT" style="-fx-padding: 10; -fx-background-color: #f8f8f8;">
+
+            <Button text="Accueil" />
+            <Button text="Evenements" />
+            <Button text="Salles" />
+            <Button text="Blog" />
+            <Button text="Inscription" />
+            <Button text="Connexion" style="-fx-background-color: #CBA979; -fx-text-fill: white;" />
+        </HBox>
+    </top>
+
+    <left>
+        <VBox styleClass="vbox">
+            <children>
+                <VBox prefHeight="200.0" prefWidth="200.0">
+                    <children>
+                        <BorderPane prefHeight="229.0" prefWidth="449.0">
+                            <top>
+                                <VBox styleClass="vbox" spacing="10" style="-fx-background-color: #CBA979;">
+                                    <ImageView fitHeight="100" fitWidth="100" pickOnBounds="true" preserveRatio="true">
+                                        <image>
+                                        </image>
+                                    </ImageView>
+                                    <children>
+                                        <ImageView fx:id="imageView" styleClass="image-view" />
+                                        <Button styleClass="button" text="Evenements" />
+                                        <Button onAction="#handleAfficherSallesClick" styleClass="button" text="Mes salles Salles" />
+                                        <Button onAction="#handleAfficherReservationsClick" styleClass="button" text="Mes réservations" />
+                                    </children>
+                                </VBox>
+                            </top>
+                        </BorderPane>
+                    </children>
+                </VBox>
+            </children>
+        </VBox>
+    </left>
+    <center>
+        <VBox prefHeight="100.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+            <children>
+                <HBox prefHeight="400.0" prefWidth="1048.0" VBox.vgrow="ALWAYS">
+                    <children>
+                        <VBox prefHeight="515.0" prefWidth="1040.0" VBox.vgrow="ALWAYS">
+                            <children>
+                                <VBox prefHeight="200.0" prefWidth="100.0" VBox.vgrow="ALWAYS">
+                                    <children>
+                                        <HBox prefHeight="40.0" prefWidth="824.0">
+                                            <children>
+                                                <Button onAction="#handlereserverSallesClick" text="Salles Disponibles" />
+                                                <Button layoutX="10.0" layoutY="10.0" mnemonicParsing="false" text="Gerer Mes Salles" />
+                                                <Button onAction="#handleAjouterSalleClick" styleClass="button-add-salle" text="Ajouter Salle" />
+                                            </children>
+                                        </HBox>
+                                        <VBox spacing="10" styleClass="column" VBox.vgrow="ALWAYS">
+                                            <children>
+                                                <HBox spacing="20" style="-fx-padding: 10;" VBox.vgrow="ALWAYS">
+                                                    <children>
+                                                        <VBox VBox.vgrow="ALWAYS" HBox.hgrow="ALWAYS">
+                                                            <children>
+                                                                <ListView fx:id="listViewSalles" styleClass="list-view" VBox.vgrow="ALWAYS" HBox.hgrow="ALWAYS" prefWidth="800" prefHeight="400">
+                                                                    <items>
+                                                                        <!-- Liste des éléments dynamiquement ajoutée -->
+                                                                    </items>
+                                                                </ListView>
+                                                            </children>
+                                                        </VBox>
+
+                                                    </children>
+                                                </HBox>
+                                            </children>
+                                        </VBox>
+                                    </children>
+                                </VBox>
+
+                                <VBox fx:id="formulaireVBox" prefHeight="200.0" prefWidth="100.0" visible="false" styleClass="form-vbox">
+                                    <children>
+                                        <TextField fx:id="titreField" promptText="Titre" styleClass="text-field" />
+                                        <TextField fx:id="capaciteField" promptText="Capacité" styleClass="text-field" />
+                                        <TextArea fx:id="equipementsField" promptText="Équipements" styleClass="text-field" />
+                                        <TextField fx:id="localisationField" promptText="Localisation" styleClass="text-field" />
+                                        <CheckBox fx:id="disponibiliteCheckBox" text="Disponible" styleClass="check-box" />
+                                        <TextField fx:id="imageField" promptText="Image" styleClass="text-field" />
+                                        <Button onAction="#handleBrowseAction" text="Parcourir" styleClass="button" />
+                                        <Button onAction="#handleAjouterOuEditerSalle" text="Ajouter" styleClass="button-add" />
+                                    </children>
+                                </VBox>
+                            </children>
+                        </VBox>
+                    </children>
+                </HBox>
+            </children>
+        </VBox>
+    </center>
+</BorderPane>

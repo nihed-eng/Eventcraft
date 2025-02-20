@@ -1,7 +1,5 @@
-package tn.esprit.services;
+package SERVICE;
 
-import tn.esprit.entities.Reservationsalle;
-import tn.esprit.entities.Salle;
 
 import java.sql.SQLException;
 import java.util.List;
